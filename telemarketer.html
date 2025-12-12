@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telemarketer Portal - 72HR Business</title>
+    <link rel="stylesheet" href="telemarketer-styles.css">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="loginScreen" class="login-container">
+        <div class="login-box">
+            <div class="logo-section">
+                <h1>72HR BUSINESS</h1>
+                <p class="subtitle">Telemarketer Portal</p>
+            </div>
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn-login">Login</button>
+                <div id="loginError" class="error-message"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Dashboard -->
+    <div id="dashboard" class="dashboard-container" style="display: none;">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-left">
+                <h1>72HR BUSINESS</h1>
+                <span class="user-badge" id="userBadge"></span>
+            </div>
+            <div class="header-right">
+                <button id="logoutBtn" class="btn-logout">Logout</button>
+            </div>
+        </header>
+
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat-card">
+                <div class="stat-label">Calls Today</div>
+                <div class="stat-value" id="callsToday">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Conversions</div>
+                <div class="stat-value" id="conversionsToday">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Conversion Rate</div>
+                <div class="stat-value" id="conversionRate">0%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Revenue Today</div>
+                <div class="stat-value" id="revenueToday">$0</div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Left Panel: My Leads -->
+            <div class="leads-panel">
+                <div class="panel-header">
+                    <h2>My Leads</h2>
+                    <div class="filter-tabs">
+                        <button class="tab-btn active" data-filter="all">All</button>
+                        <button class="tab-btn" data-filter="callbacks">Callbacks Due</button>
+                        <button class="tab-btn" data-filter="new">New</button>
+                        <button class="tab-btn" data-filter="contacted">Contacted</button>
+                    </div>
+                </div>
+
+                <!-- Callbacks Due Section -->
+                <div id="callbacksSection" class="callbacks-section">
+                    <h3>🔔 Callbacks Due Today</h3>
+                    <div id="callbacksList" class="callbacks-list"></div>
+                </div>
+
+                <!-- Leads List -->
+                <div id="leadsList" class="leads-list"></div>
+            </div>
+
+            <!-- Right Panel: Script Board -->
+            <div class="script-panel">
+                <div class="panel-header">
+                    <h2>Sales Script</h2>
+                    <button id="toggleScript" class="btn-toggle">Collapse</button>
+                </div>
+                
+                <div id="scriptContent" class="script-content">
+                    <!-- Active Lead Info -->
+                    <div id="activeLeadInfo" class="active-lead-info">
+                        <p>Select a lead to see personalized script</p>
+                    </div>
+
+                    <!-- Script Steps -->
+                    <div id="scriptSteps" class="script-steps" style="display: none;">
+                        <!-- Step 1: The Opener -->
+                        <div class="script-step">
+                            <div class="step-header">
+                                <span class="step-number">1</span>
+                                <h3>The Opener</h3>
+                            </div>
+                            <div class="step-content">
+                                <p><strong>"Hey [NAME], this is [YOUR NAME] with 72HR Business. I'm calling because I see you registered your business <span id="scriptAge" class="highlight">X MONTHS AGO</span>, and we're reaching out to help new business owners like you get set up with everything you need to scale fast."</strong></p>
+                                <p class="step-note">Pause - let them respond</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: The Hook -->
+                        <div class="script-step">
+                            <div class="step-header">
+                                <span class="step-number">2</span>
+                                <h3>The Hook (Tech Subsidy)</h3>
+                            </div>
+                            <div class="step-content">
+                                <p><strong>"The reason I'm calling is we have a <span id="subsidyType" class="highlight">tech subsidy program</span> that covers part of your setup costs. Normally this runs $2,999, but with the subsidy, you're looking at <span id="scriptSetupFee" class="highlight-price">$999</span> one-time, and then <span id="scriptMonthlyFee" class="highlight-price">$299/month</span> after that."</strong></p>
+                                <div id="newBusinessBadge" class="new-business-badge" style="display: none;">
+                                    🎉 NEW BUSINESS DISCOUNT: 50% OFF SETUP!
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: The Value Bomb -->
+                        <div class="script-step">
+                            <div class="step-header">
+                                <span class="step-number">3</span>
+                                <h3>The Value Bomb</h3>
+                            </div>
+                            <div class="step-content">
+                                <p><strong>"Here's what you get: A complete business infrastructure deployed in 72 hours. We're talking professional website, CRM system, email automation, social media management, SEO optimization, payment processing, analytics dashboard - everything a business needs to operate and scale."</strong></p>
+                                <p><strong>"The value of all this if you bought it separately? Over $150,000. But you get it all for <span id="scriptTotalSetup" class="highlight-price">$999</span> setup."</strong></p>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: The Breakdown -->
+                        <div class="script-step">
+                            <div class="step-header">
+                                <span class="step-number">4</span>
+                                <h3>The Breakdown</h3>
+                            </div>
+                            <div class="step-content">
+                                <p><strong>"Let me break down what's included in your tier:"</strong></p>
+                                <ul id="tierFeatures">
+                                    <li>Professional Website (5-10 pages)</li>
+                                    <li>CRM & Lead Management System</li>
+                                    <li>Email Marketing Automation</li>
+                                    <li>Social Media Management</li>
+                                    <li>SEO Optimization</li>
+                                    <li>Payment Processing Integration</li>
+                                    <li>Analytics Dashboard</li>
+                                    <li>24/7 Support</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Step 5: Objection Handler -->
+                        <div class="script-step">
+                            <div class="step-header">
+                                <span class="step-number">5</span>
+                                <h3>Objection Handler (Flex Pay)</h3>
+                            </div>
+                            <div class="step-content">
+                                <p><strong>If they hesitate on price:</strong></p>
+                                <p><strong>"I totally understand. Here's what we can do - we can split the setup fee. You pay <span id="scriptFlexPay1" class="highlight-price">$499</span> today to get started, and then <span id="scriptFlexPay2" class="highlight-price">$500</span> when we deliver everything in 72 hours. That way you're not putting it all down upfront."</strong></p>
+                            </div>
+                        </div>
+
+                        <!-- Step 6: The Close -->
+                        <div class="script-step">
+                            <div class="step-header">
+                                <span class="step-number">6</span>
+                                <h3>The Close</h3>
+                            </div>
+                            <div class="step-content">
+                                <p><strong>"So here's what I'm going to do - I'm going to lock in your spot right now. We'll get you set up with the <span id="scriptTierName">Starter</span> tier at <span id="scriptFinalPrice" class="highlight-price">$999</span> setup plus <span id="scriptFinalMonthly" class="highlight-price">$299/month</span>. You'll have everything live in 72 hours. Sound good?"</strong></p>
+                            </div>
+                        </div>
+
+                        <!-- Step 7: Urgency -->
+                        <div class="script-step">
+                            <div class="step-header">
+                                <span class="step-number">7</span>
+                                <h3>Urgency Reinforcement</h3>
+                            </div>
+                            <div class="step-content">
+                                <p><strong>"Just so you know, we only take on 10 new clients per week to maintain quality. We have 3 spots left this week, so if you want to get started, now's the time."</strong></p>
+                            </div>
+                        </div>
+
+                        <!-- Step 8: The Guarantee -->
+                        <div class="script-step">
+                            <div class="step-header">
+                                <span class="step-number">8</span>
+                                <h3>The 72-Hour Guarantee</h3>
+                            </div>
+                            <div class="step-content">
+                                <p><strong>"And remember - if we don't deliver everything within 72 hours, you get your setup fee back. No questions asked. We've never missed a deadline."</strong></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Reference -->
+                    <div class="quick-reference">
+                        <h4>Quick Reference</h4>
+                        <div id="quickPricing" class="pricing-reference">
+                            <p>Select a lead to see pricing</p>
+                        </div>
+                    </div>
+
+                    <!-- Common Objections -->
+                    <div class="objections-section">
+                        <h4>Common Objections</h4>
+                        <div class="objection">
+                            <strong>"I need to think about it"</strong>
+                            <p>"I totally get that. What specifically do you need to think about? Is it the price, the features, or the timeline? Let me address that for you right now."</p>
+                        </div>
+                        <div class="objection">
+                            <strong>"I already have a website"</strong>
+                            <p>"That's great! But this isn't just a website - it's a complete business infrastructure. CRM, automation, marketing tools, analytics. Most businesses have a website but are missing all the backend systems to scale. That's what we provide."</p>
+                        </div>
+                        <div class="objection">
+                            <strong>"I can't afford it right now"</strong>
+                            <p>"I understand. That's exactly why we have the Flex Pay option. <span class='highlight-price'>$499 today</span>, <span class='highlight-price'>$500 at delivery</span>. And remember, the monthly fee doesn't start until after your 30-day trial. So you have time to see results before the recurring cost kicks in."</p>
+                        </div>
+                        <div class="objection">
+                            <strong>"How do I know this will work?"</strong>
+                            <p>"Great question. We have a 72-hour delivery guarantee - if we don't deliver, you get your money back. Plus, you get a 30-day trial on the monthly service. Zero risk on your end. And we've deployed over 500 businesses with a 98% satisfaction rate."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call Log Modal -->
+    <div id="callLogModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Log Call</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <form id="callLogForm">
+                <input type="hidden" id="callLogLeadId">
+                
+                <div class="form-group">
+                    <label>Call Outcome *</label>
+                    <select id="callOutcome" required>
+                        <option value="">Select outcome...</option>
+                        <option value="answered-interested">☎️ Answered - Interested</option>
+                        <option value="answered-not-interested">☎️ Answered - Not Interested</option>
+                        <option value="voicemail">📞 Voicemail Left</option>
+                        <option value="no-answer">📞 No Answer</option>
+                        <option value="callback">📅 Callback Scheduled</option>
+                        <option value="converted">✅ Converted to Sale</option>
+                        <option value="lost">❌ Lost/Dead Lead</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="callbackDateGroup" style="display: none;">
+                    <label>Callback Date & Time *</label>
+                    <input type="datetime-local" id="callbackDate">
+                </div>
+
+                <div class="form-group" id="tierSelectGroup" style="display: none;">
+                    <label>Tier Sold *</label>
+                    <select id="tierSold">
+                        <option value="starter">Starter</option>
+                        <option value="growth">Growth</option>
+                        <option value="empire">Empire</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Call Notes</label>
+                    <textarea id="callNotes" rows="4" placeholder="Add any relevant notes about the call..."></textarea>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary cancel-modal">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Call Log</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="telemarketer-script.js"></script>
+</body>
+</html>

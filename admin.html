@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        #admin-panel { display: none; }
+        .lead-management { margin-top: 20px; }
+        #leads-list { list-style: none; padding: 0; }
+        #leads-list li { margin-bottom: 10px; border: 1px solid #ccc; padding: 10px; }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+
+    <h2>Admin Portal Login</h2>
+
+    <div id="login-form">
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <button type="submit">Login</button>
+        </form>
+        <p>Hint: Username is <strong>admin123</strong>, Password is <strong>Bozmoski1!</strong></p> 
+    </div>
+
+    <div id="admin-panel">
+        <button id="logout-button">Logout</button>
+        
+        <div class="lead-creation">
+            <h3>Create New Lead</h3>
+            <form id="lead-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required><br><br>
+                <button type="submit">Add Lead</button>
+            </form>
+        </div>
+
+        <div class="lead-management">
+            <h3>Manage Leads</h3>
+            <ul id="leads-list">
+                </ul>
+        </div>
+    </div>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>

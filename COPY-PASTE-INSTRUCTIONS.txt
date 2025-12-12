@@ -1,0 +1,60 @@
+GITHUB COPY & PASTE INSTRUCTIONS
+=================================
+
+STEP 1: DELETE OLD FILES IN GITHUB
+----------------------------------
+1. Go to: https://github.com/scambria0838-gif/72hrbusiness-backend
+2. Click "Code" tab
+3. Delete ALL files in the root folder EXCEPT backend/
+4. Click "Commit changes"
+
+STEP 2: UPLOAD NEW FILES
+------------------------
+1. Click "Add file" → "Upload files"
+2. Drag ALL files from this folder (except backend/)
+3. Click "Commit changes"
+
+STEP 3: ENABLE GITHUB PAGES
+----------------------------
+1. Go to Settings → Pages
+2. Source: "Deploy from a branch"
+3. Branch: "main" / Folder: "/ (root)"
+4. Click Save
+5. Wait 5 minutes
+
+STEP 4: TEST YOUR WEBSITE
+-------------------------
+Go to: https://scambria0838-gif.github.io/72hrbusiness-backend/
+
+FILES TO UPLOAD (20 total):
+✅ index.html (main homepage)
+✅ styles.css (styling)
+✅ script.js (functionality)
+✅ admin.html (admin dashboard)
+✅ admin-styles.css (admin styling)
+✅ admin-script.js (admin functions)
+✅ telemarketer.html (sales portal)
+✅ telemarketer-styles.css (sales styling)
+✅ telemarketer-script.js (sales functions)
+✅ onboarding.html (customer form)
+✅ onboarding-styles.css (form styling)
+✅ onboarding-script.js (form functions)
+✅ privacy-policy.html (legal)
+✅ terms-conditions.html (legal)
+✅ sms-consent.html (legal)
+✅ stripe-config.js (payments)
+✅ vault-data.js (products)
+✅ sitemap.xml (SEO)
+✅ robots.txt (SEO)
+✅ NODE-RED-FLOW-WITH-MUSIC.json (calling flow)
+✅ background-music.mp3 (jingle)
+✅ UPLOAD-NOW.txt (instructions)
+
+KEEP backend/ FOLDER AS IS (has your server files)
+
+YOUR WEBSITE WILL BE LIVE AT:
+https://scambria0838-gif.github.io/72hrbusiness-backend/
+
+LOGIN INFO:
+- Admin: admin/Bozmoski1!
+- Telemarketer: sales1/Makemoney1!

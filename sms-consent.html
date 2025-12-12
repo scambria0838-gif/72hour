@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Consent - 72HR Business</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0A0A0A 0%, #1a1a2e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo h1 {
+            font-size: 2.5em;
+            background: linear-gradient(135deg, #00D9FF 0%, #00FF88 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .logo p {
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        h2 {
+            color: #00D9FF;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            border-left: 3px solid #00FF88;
+        }
+
+        .section h3 {
+            color: #00FF88;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .section p, .section ul {
+            line-height: 1.8;
+            color: #cccccc;
+            margin-bottom: 15px;
+        }
+
+        .section ul {
+            padding-left: 20px;
+        }
+
+        .section li {
+            margin-bottom: 10px;
+        }
+
+        .consent-box {
+            background: rgba(0, 217, 255, 0.1);
+            border: 2px solid #00D9FF;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .consent-box h3 {
+            color: #00D9FF;
+            margin-bottom: 15px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            margin-top: 3px;
+            cursor: pointer;
+            accent-color: #00FF88;
+        }
+
+        .checkbox-group label {
+            flex: 1;
+            cursor: pointer;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            color: #00FF88;
+            font-weight: bold;
+        }
+
+        .example-box {
+            background: rgba(0, 255, 136, 0.1);
+            border-left: 3px solid #00FF88;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            font-style: italic;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        .footer a {
+            color: #00D9FF;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+            }
+
+            .logo h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>72HR BUSINESS</h1>
+            <p>Deploy Your Empire in 72 Hours</p>
+        </div>
+
+        <h2>SMS Communication Consent Policy</h2>
+
+        <div class="section">
+            <h3>📱 How We Collect Your Consent</h3>
+            <p>At 72HR Business, we respect your privacy and comply with all SMS messaging regulations. Here's how we obtain your consent to send you text messages:</p>
+            
+            <ul>
+                <li><strong>During Onboarding:</strong> When you complete your business setup form, you'll see a clear checkbox asking for SMS consent</li>
+                <li><strong>During Sales Calls:</strong> Our team will verbally confirm your consent and document it in our CRM</li>
+                <li><strong>On Our Website:</strong> Any form that collects your phone number includes an explicit opt-in checkbox</li>
+            </ul>
+        </div>
+
+        <div class="consent-box">
+            <h3>✅ Example Consent Language</h3>
+            <p>When you sign up with 72HR Business, you'll see this exact language:</p>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="consent-example" checked disabled>
+                <label for="consent-example">
+                    <strong>Yes, I consent to receive SMS text messages from 72HR Business.</strong><br>
+                    By checking this box, I agree to receive text messages including:
+                    <ul style="margin-top: 10px;">
+                        <li>Order confirmations and updates</li>
+                        <li>Appointment reminders for onboarding calls</li>
+                        <li>Important account notifications</li>
+                        <li>Occasional promotional offers (you can opt-out anytime)</li>
+                    </ul>
+                    <span class="highlight">Message and data rates may apply. Reply STOP to unsubscribe at any time. Reply HELP for assistance.</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>📨 Types of Messages You'll Receive</h3>
+            <p>We only send messages that add value to your experience:</p>
+            
+            <div class="example-box">
+                <strong>Order Confirmation:</strong><br>
+                "Welcome to 72HR Business! Your order #12345 is confirmed. Your dedicated setup specialist will contact you within 24 hours. Reply STOP to opt-out."
+            </div>
+
+            <div class="example-box">
+                <strong>Appointment Reminder:</strong><br>
+                "Reminder: Your 72HR Business onboarding call is tomorrow at 2 PM EST. We'll call you at this number. Reply STOP to opt-out."
+            </div>
+
+            <div class="example-box">
+                <strong>Status Update:</strong><br>
+                "Great news! Your business infrastructure is 50% complete. Your website will be live in 36 hours. Questions? Call us at (877) 836-1764. Reply STOP to opt-out."
+            </div>
+
+            <div class="example-box">
+                <strong>Completion Notice:</strong><br>
+                "🎉 Your business is LIVE! Access your admin panel at yourbusiness.com/admin. Login details sent to your email. Reply STOP to opt-out."
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>🛑 How to Opt-Out</h3>
+            <p>You have complete control over SMS communications:</p>
+            <ul>
+                <li><strong>Text "STOP"</strong> to any message to immediately unsubscribe</li>
+                <li><strong>Text "HELP"</strong> for customer support information</li>
+                <li><strong>Contact us</strong> at support@72hrbusiness.com to manage preferences</li>
+                <li><strong>Update settings</strong> in your admin dashboard under Account Settings</li>
+            </ul>
+            <p style="margin-top: 15px;"><span class="highlight">We will immediately honor all opt-out requests within 24 hours.</span></p>
+        </div>
+
+        <div class="section">
+            <h3>📊 Message Frequency</h3>
+            <p>We respect your inbox and keep messages relevant:</p>
+            <ul>
+                <li><strong>During Setup (72 hours):</strong> 3-5 messages with critical updates</li>
+                <li><strong>After Launch:</strong> 1-2 messages per month for account updates</li>
+                <li><strong>Promotional:</strong> Maximum 2 messages per month (optional)</li>
+            </ul>
+            <p style="margin-top: 15px;">Standard message and data rates apply based on your mobile carrier's plan.</p>
+        </div>
+
+        <div class="section">
+            <h3>🔒 Privacy & Data Protection</h3>
+            <p>Your phone number and personal information are protected:</p>
+            <ul>
+                <li>We never sell or share your phone number with third parties</li>
+                <li>All data is encrypted and stored securely</li>
+                <li>We comply with TCPA, CTIA, and all SMS regulations</li>
+                <li>You can request data deletion at any time</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>📞 Contact Information</h3>
+            <p>Questions about our SMS policy? Reach us:</p>
+            <ul>
+                <li><strong>Phone:</strong> (877) 836-1764</li>
+                <li><strong>Email:</strong> support@72hrbusiness.com</li>
+                <li><strong>Website:</strong> www.72hrbusiness.com</li>
+                <li><strong>Address:</strong> [Your Business Address]</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p><strong>Last Updated:</strong> December 2024</p>
+            <p>© 2024 72HR Business. All rights reserved.</p>
+            <p><a href="index.html">Return to Homepage</a> | <a href="mailto:support@72hrbusiness.com">Contact Support</a></p>
+        </div>
+    </div>
+</body>
+</html>

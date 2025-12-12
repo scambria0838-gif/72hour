@@ -1,0 +1,21 @@
+72HR BUSINESS - UPLOAD INSTRUCTIONS
+===================================
+
+UPLOAD STEPS:
+1. Go to Hostinger File Manager → public_html
+2. Delete everything in public_html
+3. Upload ALL these files to public_html (main level)
+4. Test: 72hrbusiness.com
+
+LOGIN INFO:
+- Admin: admin.html → admin/Bozmoski1!
+- Telemarketer: telemarketer.html → sales1/Makemoney1!
+
+AFTER UPLOAD:
+1. Edit stripe-config.js with your Stripe keys
+2. Deploy backend to Heroku (see backend/README.md)
+3. Import NODE-RED-FLOW-WITH-MUSIC.json to Node-RED
+4. Upload background-music.mp3 (included)
+5. Test calling system
+
+YOU'RE LIVE! Start making sales!

@@ -1,0 +1,56 @@
+[
+    {
+        "id": "18f99e327179836c",
+        "type": "tab",
+        "label": "Twilio and Music Flow",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "76e44b9a9d2d0c24",
+        "type": "twilio-send",
+        "z": "18f99e327179836c",
+        "twilio": "b1a78c187e1488c9",
+        "name": "Send SMS",
+        "number": "+15551234567",
+        "msg": "payload",
+        "x": 620,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "11d1e43e7428f522",
+        "type": "inject",
+        "z": "18f99e327179836c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Hello from Node-RED!",
+        "payloadType": "str",
+        "x": 370,
+        "y": 120,
+        "wires": [
+            [
+                "76e44b9a9d2d0c24"
+            ]
+        ]
+    },
+    {
+        "id": "b1a78c187e1488c9",
+        "type": "twilio-config",
+        "name": "My Twilio Account",
+        "accountid": "[YOUR_TWILIO_ACCOUNT_SID_HERE]", 
+        "authtoken": "[YOUR_TWILIO_AUTH_TOKEN_HERE]"
+    }
+]
